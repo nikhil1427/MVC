@@ -1,0 +1,52 @@
+﻿@model List<PatientManagement.Models.Patient>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container p-5">
+        @Html.ActionLink("Create Patient","Create")
+        <br /><br />
+        <table class="table text-capitalize">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Bg</th>
+                <th>Disease</th>
+                <th></th>
+            </tr>
+            @foreach(var patient in Model)
+            {
+                <tr>
+                    <td>
+                        @patient.Id
+                    </td>
+                    <td>
+                        @patient.Name
+                    </td>
+                    <td>
+                        @patient.Age
+                    </td>
+                    <td>
+                        @patient.Bg
+                    </td>
+                    <td>
+                        @patient.Disease
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=patient.Id })
+                        |
+                        @Html.ActionLink("Delete", "Delete", new { id=patient.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

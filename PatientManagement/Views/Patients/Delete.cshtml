@@ -1,0 +1,61 @@
+﻿@model PatientManagement.Models.Patient
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white font-weight-bold text-center">
+                        Delete Patient
+                    </div>
+                    <div class="card-body text-center">
+                        <dl>
+                            <dt>
+                                Name:
+                            </dt>
+                            <dd>
+                                @Model.Name
+                            </dd>
+                            <dt>
+                                Age:
+                            </dt>
+                            <dd>
+                                @Model.Age
+                            </dd>
+                            <dt>
+                                Bg:
+                            </dt>
+                            <dd>
+                                @Model.Bg
+                            </dd>
+                            <dt>
+                                Disease
+                            </dt>
+                            <dd>
+                                @Model.Disease
+                            </dd>
+                        </dl>
+
+                        @using (Html.BeginForm())
+                        {
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</body>
+</html>
